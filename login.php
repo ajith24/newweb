@@ -1,3 +1,8 @@
+<?php 
+global $msg;
+require 'logincheck.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -27,29 +32,29 @@
 		<div class="templatemo-content-widget templatemo-login-widget white-bg">
 			<header class="text-center">
 	          <div class="square"></div>
-	          <h1>Visual Admin</h1>
+	          <h1>Login</h1>
 	        </header>
-	        <form action="index.html" class="templatemo-login-form">
+	        <form action="#" class="templatemo-login-form" method="post" >
 	        	<div class="form-group">
 	        		<div class="input-group">
 		        		<div class="input-group-addon"><i class="fa fa-user fa-fw"></i></div>	        		
-		              	<input type="text" class="form-control" placeholder="js@dashboard.com">           
+		              	<input type="text" name="txtmail" class="form-control" placeholder="User name">           
 		          	</div>	
 	        	</div>
 	        	<div class="form-group">
 	        		<div class="input-group">
 		        		<div class="input-group-addon"><i class="fa fa-key fa-fw"></i></div>	        		
-		              	<input type="password" class="form-control" placeholder="******">           
+		              	<input type="password" name="txtpass" class="form-control" placeholder="******">           
 		          	</div>	
 	        	</div>	          	
 	          	<div class="form-group">
-				    <div class="checkbox squaredTwo">
-				        <input type="checkbox" id="c1" name="cc" />
-						<label for="c1"><span></span>Remember me</label>
-				    </div>				    
-				</div>
+			        <div class="alert alert-danger" role="alert">
+		  				<span class="sr-only">Error:</span>
+		  					<?php echo (empty($msg)?' ' :  $msg);?>
+					</div>
+	        	</div>	
 				<div class="form-group">
-					<button type="submit" class="templatemo-blue-button width-100">Login</button>
+					<input type="submit" class="templatemo-blue-button width-100" value="Login" name="submit" />
 				</div>
 	        </form>
 		</div>

@@ -1,3 +1,8 @@
+<?php 
+require 'sessionCheck.php';
+require 'lib.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -22,7 +27,16 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-
+	<style type="text/css">
+	#trColor{
+		background-color: #F5F5DC;
+		
+	}
+	#imgRound{
+		
+		border-radius: 30px;
+	}
+	</style>
   </head>
   <body>  
     <!-- Left column -->
@@ -49,35 +63,32 @@
         <nav class="templatemo-left-nav">          
           <ul>
             <li><a href="#" class="active"><i class="fa fa-home fa-fw"></i>Dashboard</a></li>
-            <li><a href="data-visualization.html"><i class="fa fa-bar-chart fa-fw"></i>Charts</a></li>
+            <li><a href="adddata.php"><i class="fa fa-bar-chart fa-fw"></i>Add Bio Data</a></li>
             <li><a href="data-visualization.html"><i class="fa fa-database fa-fw"></i>Data Visualization</a></li>
             <li><a href="maps.html"><i class="fa fa-map-marker fa-fw"></i>Maps</a></li>
             <li><a href="manage-users.html"><i class="fa fa-users fa-fw"></i>Manage Users</a></li>
             <li><a href="preferences.html"><i class="fa fa-sliders fa-fw"></i>Preferences</a></li>
-            <li><a href="login.html"><i class="fa fa-eject fa-fw"></i>Sign Out</a></li>
+            <li><a href="logout.php"><i class="fa fa-eject fa-fw"></i>Logout</a></li>
           </ul>  
         </nav>
       </div>
       <!-- Main content --> 
       <div class="templatemo-content col-1 light-gray-bg">
-        <div class="templatemo-top-nav-container">
+       <div class="templatemo-top-nav-container">
           <div class="row">
             <nav class="templatemo-top-nav col-lg-12 col-md-12">
-              <ul class="text-uppercase">
-                <li><a href="" class="active">Admin panel</a></li>
-                <li><a href="">Dashboard</a></li>
-                <li><a href="">Overview</a></li>
-                <li><a href="login.html">Sign in form</a></li>
+              <ul class="text-uppercase" style="float: right;">
+                <li><a href="logout.php">Logout</a></li>
               </ul>  
             </nav> 
           </div>
         </div>
-        <div class="templatemo-content-container">
+         <div class="templatemo-content-container">
           <div class="templatemo-flex-row flex-content-row">
             
             <div class="col-1">
               <div class="panel panel-default templatemo-content-widget white-bg no-padding templatemo-overflow-hidden">
-                <i class="fa fa-times"></i>
+               
                 <div class="panel-heading templatemo-position-relative"><h2 class="text-uppercase">User Table</h2></div>
                 <div class="table-responsive">
                   <table class="table table-striped table-bordered">
@@ -85,43 +96,49 @@
                       <tr>
                         <td>No.</td>
                         <td>Full Name</td>
+                        <td>Pic</td>
                         <td>DOB</td>
-                        <td>Age</td>
+                        <td>DOA</td>
                         <td>Created By</td>
+                        <td>Actions</td>
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td>1.</td>
-                        <td>John</td>
-                        <td>Smith</td>
-                        <td>@jS</td>
-                      </tr>
-                      <tr>
-                        <td>2.</td>
-                        <td>Bill</td>
-                        <td>Jones</td>
-                        <td>@bJ</td>
-                      </tr>
-                      <tr>
-                        <td>3.</td>
-                        <td>Mary</td>
-                        <td>James</td>
-                        <td>@mJ</td>
-                      </tr>
-                      <tr>
-                        <td>4.</td>
-                        <td>Steve</td>
-                        <td>Bride</td>
-                        <td>@sB</td>
-                      </tr>
-                      <tr>
-                        <td>5.</td>
-                        <td>Paul</td>
-                        <td>Richard</td>
-                        <td>@pR</td>
-                      </tr>                    
-                    </tbody>
+                  <?php 
+                  		$res = array();
+                  		$res = getBdData();
+                  		$i = 0;
+                  		foreach ($res as $val){
+                  				$i++;
+								$date1 = date("Y-m-d");
+								$date2 = $val['bdate'];
+								if($date1 == $date2){
+									echo "<tr id='trColor'>";
+								}else{
+									echo "<tr>";
+								}
+																
+								echo "  <td>$i</td>
+                        				<td>".$val['name']."</td>
+    									<td><img id = 'imgRound' width=50 height=50 src='images/profilePic/".$val['imgloc']."' /></td>
+				                        <td>".$val['bdate']."</td>
+				                       	<td>".$val['adate']."</td>
+    									<td>".getUserName($val['created_by'])."</td>
+    									<td> 
+    										<a href='#' >
+    											<img width=30 height=30 src='images/icons/edit.png' alt='Edit data' />
+    										</a>
+    										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    										<a href='#' >
+    											<img width=30 height=30 src='images/icons/del.png' alt='Delete data' />
+    										</a>
+    									</td>
+                      				</tr>
+    	  							";
+						}
+						
+                  ?>  
+                   </tbody>
                   </table>    
                 </div>                          
               </div>
