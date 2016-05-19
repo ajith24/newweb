@@ -33,7 +33,7 @@ if(isset($_FILES['fileToUpload'])){
 	}
 	$file_name = rand(1000,10000).$file_name;
 	if(empty($errors) == true){
-		move_uploaded_file($file_tmp,"images/profilePic/".$file_name);
+		move_uploaded_file($file_tmp,"images/userPic/".$file_name);
 		$imgpath = $file_name;
 	}else{
 		print_r($errors);

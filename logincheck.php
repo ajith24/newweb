@@ -12,8 +12,10 @@ if(isset($_POST['submit'])) {
 	$sql = "SELECT * FROM tbl_login WHERE username ='".$username."' AND password='".md5($password)."' LIMIT 1";
 	$res = $conn->query($sql);
 	if($res->num_rows == 1 ) {
-		$_SESSION["id"] = 1;
+		$row = $res->fetch_assoc();
+		$_SESSION["id"] = $row['slno'];
 		$_SESSION["login"] = 1;
+		$_SESSION["imgloc"] = $row['imgloc'];
 		header('Location: index.php');
 	} else {
 		$_SESSION["login"] = 0;

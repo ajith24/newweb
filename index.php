@@ -47,7 +47,7 @@ require 'lib.php';
           <h1>Visual Admin</h1>
         </header>
         <div class="profile-photo-container">
-          <img src="images/profile-photo.jpg" alt="Profile Photo" class="img-responsive">  
+          <img src="images/profilePic/<?php echo $_SESSION['imgloc'] ?>" alt="Profile Photo" class="img-responsive">  
           <div class="profile-photo-overlay"></div>
         </div>      
         <!-- Search box -->
@@ -120,7 +120,7 @@ require 'lib.php';
 																
 								echo "  <td>$i</td>
                         				<td>".$val['name']."</td>
-    									<td><img id = 'imgRound' width=50 height=50 src='images/profilePic/".$val['imgloc']."' /></td>
+    									<td><img id = 'imgRound' width=50 height=50 src='images/userPic/".$val['imgloc']."' /></td>
 				                        <td>".$val['bdate']."</td>
 				                       	<td>".$val['adate']."</td>
     									<td>".getUserName($val['created_by'])."</td>
