@@ -8,7 +8,7 @@ $method = $_SERVER['REQUEST_METHOD'];
 
 //$response = getallheaders();
 $today   = date("Y-m-d");
-$sql = "select * from tbl_bd where bdate = '".$today."'";
+$sql = "select * from tbl_bd ORDER BY updated_at ASC";
 
 $result = $conn->query($sql);
 
@@ -21,9 +21,9 @@ if ($result->num_rows > 0) {
 		$res = array();
 		$res['name'] = $row['name'];
 		$res['bdate'] = $row['bdate'];
-		$res['age'] = $row['age'];
+		$res['adate'] = $row['adate'];
 		$res['createdBy'] = $row['created_by'];
-		$responseJson ['res'. $i++] = $res; 
+		$responseJson ['res'.$i++] = $res; 
 	}
 } else {
 	$responseJson['error'] = "0 results";
