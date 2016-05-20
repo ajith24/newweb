@@ -16,7 +16,7 @@ if ($result->num_rows > 0) {
 		$res['name'] = $row['name'];
 		$res['bdate'] = $row['bdate'];
 		$res['adate'] = $row['adate'];
-		$res['imgloc'] = $row['imgloc'];
+		$res['imgloc'] = "images/userPic/".$row['imgloc'];
 		$res['createdBy'] = $row['created_by'];
 		$responseJson ['res'.$i++] = $res; 
 	}
