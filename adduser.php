@@ -55,7 +55,7 @@
         <div class="templatemo-content-container">
           <div class="templatemo-content-widget white-bg">
             <h2 class="margin-bottom-10">Add</h2>
-            <form action="adddataToDb.php" class="templatemo-login-form" method="post" enctype="multipart/form-data">
+            <form action="addUserToDb.php" class="templatemo-login-form" method="post" enctype="multipart/form-data">
               <div class="row form-group">
                 <div class="col-lg-6 col-md-6 form-group">                  
                     <label for="inputFirstName">First Name</label>
@@ -72,100 +72,25 @@
                     <label for="inputEmail">Email</label>
                     <input type="email" name="inputEmail" class="form-control" id="inputEmail" placeholder="admin@company.com">                  
                 </div> 
+                 <div class="col-lg-6 col-md-6 form-group">                  
+                    <label for="inputUsername">Username</label>
+                    <input type="text" name="inputUsername" class="form-control" id="inputUsername" placeholder="username" required="required">                  
+                </div>
+                 
               </div>
               
-              <label class="control-label templatemo-block">Select Date of Birth</label>   
+              
               <div class="row form-group">
-                <div class="col-lg-2 col-md-2 form-group"> 
-                    
-                            
-                  <select class="form-control" name="inputBdyear" required="required">
-                  <option value="0000" selected="selected" disabled="disabled">Year</option>
-                  <?php for($i = 1950; $i<=2016; $i++){
-                  			echo "<option value='$i'>$i</option>";
-                  	
-                  		}
-                  ?>                     
-                  </select>
-                            
+                
+                 <div class="col-lg-6 col-md-6 form-group">                  
+                    <label for="inputPass">Password</label>
+                    <input type="password" name="inputPass" class="form-control" id="inputPass" placeholder="******" required="required">                      
                 </div>
-                <div class="col-lg-2 col-md-2 form-group"> 
-                       
-                  <select class="form-control" name="inputBdMonth">
-                  	<option value="0" selected="selected" disabled="disabled">Month</option>
-                    <option value="1">Jan</option>
-                    <option value="2">Feb</option>
-                    <option value="3">Mar</option>          
-                    <option value="4">Apr</option>          
-                    <option value="5">May</option>          
-                    <option value="6">Jun</option>          
-                    <option value="7">Jul</option>          
-                    <option value="8">Aug</option>          
-                    <option value="9">Sep</option>
-                    <option value="10">Oct</option>          
-                    <option value="11">Nov</option>          
-                    <option value="12">Dec</option>                                          
-                  </select>
-                </div>
-               <div class="col-lg-2 col-md-2 form-group"> 
-                          
-                  <select class="form-control"  name="inputBdDay">
-                  <option value="0" selected="selected" disabled="disabled">Day</option>
-                   <?php for($i = 1; $i<=31; $i++){
-                  			echo "<option value='$i'>$i</option>";
-                  	
-                  		}
-                  ?>                     
-                  </select>
+                <div class="col-lg-6 col-md-6 form-group">                  
+                    <label for="inputRePass">Re-type Password</label>
+                    <input type="password" name="inputRePass" class="form-control" id="inputRePass" placeholder="******" required="required">                 
                 </div>
               </div>
-              
-               <label class="control-label templatemo-block">Select Date of Birth</label>   
-              <div class="row form-group">
-                <div class="col-lg-2 col-md-2 form-group"> 
-                    
-                                
-                  <select class="form-control"  name="inputAdYear" required="required">
-                  <option value="0000" selected="selected" disabled="disabled">Year</option>
-                  <?php for($i = 1950; $i<=2016; $i++){
-                  			echo "<option value='$i'>$i</option>";
-                  	
-                  		}
-                  ?>                     
-                  </select>
-                            
-                </div>
-                <div class="col-lg-2 col-md-2 form-group"> 
-                             
-                  <select class="form-control" name="inputAdMonth">
-                  	<option value="0" selected="selected" disabled="disabled">Month</option>
-                    <option value="1">Jan</option>
-                    <option value="2">Feb</option>
-                    <option value="3">Mar</option>          
-                    <option value="4">Apr</option>          
-                    <option value="5">May</option>          
-                    <option value="6">Jun</option>          
-                    <option value="7">Jul</option>          
-                    <option value="8">Aug</option>          
-                    <option value="9">Sep</option>
-                    <option value="10">Oct</option>          
-                    <option value="11">Nov</option>          
-                    <option value="12">Dec</option>                                          
-                  </select>
-                </div>
-               <div class="col-lg-2 col-md-2 form-group"> 
-                  
-                  <select class="form-control" name="inputAdDay">
-                  <option value="0" selected="selected" disabled="disabled">Day</option>
-                   <?php for($i = 1; $i<=31; $i++){
-                  			echo "<option value='$i'>$i</option>";
-                  	
-                  		}
-                  ?>                     
-                  </select>
-                </div>
-              </div>
-              
               <div class="row form-group">
                 <div class="col-lg-12">
                   <label class="control-label templatemo-block">Upload Image</label> 

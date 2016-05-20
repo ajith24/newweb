@@ -76,12 +76,16 @@ require 'lib.php';
           </div>
         </div>
          <div class="templatemo-content-container">
+         
           <div class="templatemo-flex-row flex-content-row">
             
-            <div class="col-1">
+            <div class="col-1">  
               <div class="panel panel-default templatemo-content-widget white-bg no-padding templatemo-overflow-hidden">
-               
-                <div class="panel-heading templatemo-position-relative"><h2 class="text-uppercase">User Table</h2></div>
+              
+                <div class="panel-heading templatemo-position-relative">
+                	<h2 class="text-uppercase" style="float: left;">User Table</h2>
+                	<h3 style="text-align: right; color: white;"><a href="adddata.php" >Add New Data </a></h3>
+                </div>
                 <div class="table-responsive">
                   <table class="table table-striped table-bordered">
                     <thead>
@@ -136,10 +140,10 @@ require 'lib.php';
               </div>
             </div>           
           </div> <!-- Second row ends -->
-         
-          <footer class="text-right">
-            <p>Copyright &copy; 2084 Company Name 
-            | Designed by <a href="http://www.templatemo.com" target="_parent">templatemo</a></p>
+         <div class="templatemo-flex-row flex-content-row">
+            <footer class="text-right">
+            <p>Copyright &copy; 2084 Ajith World
+            | Designed by <a href="http://www.ajithworld.in" target="_parent">Ajith</a></p>
           </footer>         
         </div>
       </div>

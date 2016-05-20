@@ -67,6 +67,7 @@
           </div>
         </div>
         <div class="templatemo-content-container">
+            <p><a href="adduser.php" >Add New User </a></p>       
           <div class="templatemo-content-widget no-padding">
             <div class="panel panel-default table-responsive">
               <table class="table table-striped table-bordered templatemo-user-table">
@@ -104,13 +105,14 @@
                      
                 </tbody>
               </table>    
-            </div>                          
-          </div>          
+            </div>
+                           
+          </div>         
           
           <div class="templatemo-flex-row flex-content-row">
             <footer class="text-right">
-            <p>Copyright &copy; 2084 Company Name 
-            | Designed by <a href="http://www.templatemo.com" target="_parent">templatemo</a></p>
+            <p>Copyright &copy; 2084 Ajith World
+            | Designed by <a href="http://www.ajithworld.in" target="_parent">Ajith</a></p>
           </footer>         
         </div>
       </div>

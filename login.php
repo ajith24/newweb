@@ -58,8 +58,8 @@ require 'logincheck.php';
 				</div>
 	        </form>
 		</div>
-		<div class="templatemo-content-widget templatemo-login-widget templatemo-register-widget white-bg">
+		<!-- <div class="templatemo-content-widget templatemo-login-widget templatemo-register-widget white-bg">
 			<p>Not a registered user yet? <strong><a href="#" class="blue-text">Sign up now!</a></strong></p>
-		</div>
+		</div> -->
 	</body>
 </html>
