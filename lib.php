@@ -36,3 +36,18 @@ function getBdData(){
 	return $res;
 }
 
+
+function getUserData(){
+	require 'dbconnect.php';
+	
+	$sql = "select * from tbl_login ORDER BY update_at ASC";
+	$result = $conn->query($sql);
+	$res = array();
+	if ($result->num_rows > 0) {
+		while($row = $result->fetch_assoc()) {
+			$res[] = $row;
+		}
+	}
+	$conn->close();
+	return $res;
+}

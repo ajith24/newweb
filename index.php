@@ -9,7 +9,7 @@ require 'lib.php';
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">  
-    <title>Visual Admin Dashboard - Home</title>
+    <title>Ajith World Dashboard - Home</title>
     <meta name="description" content="">
     <meta name="author" content="templatemo">
     <!-- 
@@ -60,16 +60,8 @@ require 'lib.php';
         <div class="mobile-menu-icon">
             <i class="fa fa-bars"></i>
         </div>
-        <nav class="templatemo-left-nav">          
-          <ul>
-            <li><a href="#" class="active"><i class="fa fa-home fa-fw"></i>Dashboard</a></li>
-            <li><a href="adddata.php"><i class="fa fa-bar-chart fa-fw"></i>Add Bio Data</a></li>
-            <li><a href="data-visualization.html"><i class="fa fa-database fa-fw"></i>Data Visualization</a></li>
-            <li><a href="maps.html"><i class="fa fa-map-marker fa-fw"></i>Maps</a></li>
-            <li><a href="manage-users.html"><i class="fa fa-users fa-fw"></i>Manage Users</a></li>
-            <li><a href="preferences.html"><i class="fa fa-sliders fa-fw"></i>Preferences</a></li>
-            <li><a href="logout.php"><i class="fa fa-eject fa-fw"></i>Logout</a></li>
-          </ul>  
+       <nav class="templatemo-left-nav">          
+          <?php require 'menu.php';?>
         </nav>
       </div>
       <!-- Main content --> 
