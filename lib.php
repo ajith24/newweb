@@ -1,4 +1,5 @@
 <?php
+session_start();
 function getUserName($id){
 	
 	require 'dbconnect.php';
@@ -21,8 +22,11 @@ function getUserName($id){
 
 function getBdData(){
 	require 'dbconnect.php';
-	
-	$sql = "select * from tbl_bd ORDER BY updated_at ASC";
+
+	if($_SESSION["type"] == 1)
+		$sql = "select * from tbl_bd ORDER BY updated_at ASC";
+	else
+		$sql = "select * from tbl_bd where created_by = ".$_SESSION["id"]." ORDER BY updated_at ASC";
 	$result = $conn->query($sql);
 	$i = 0;
 	$res = array();

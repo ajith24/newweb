@@ -120,13 +120,13 @@
                 </div>
               </div>
               
-               <label class="control-label templatemo-block">Select Date of Birth</label>   
+               <label class="control-label templatemo-block">Wedding Anniversary</label>   
               <div class="row form-group">
                 <div class="col-lg-2 col-md-2 form-group"> 
                     
                                 
                   <select class="form-control"  name="inputAdYear" required="required">
-                  <option value="0000" selected="selected" disabled="disabled">Year</option>
+                  <option value="0000" selected="selected" >Year</option>
                   <?php for($i = 1950; $i<=2016; $i++){
                   			echo "<option value='$i'>$i</option>";
                   	
@@ -138,7 +138,7 @@
                 <div class="col-lg-2 col-md-2 form-group"> 
                              
                   <select class="form-control" name="inputAdMonth">
-                  	<option value="0" selected="selected" disabled="disabled">Month</option>
+                  	<option value="0" selected="selected" >Month</option>
                     <option value="1">Jan</option>
                     <option value="2">Feb</option>
                     <option value="3">Mar</option>          
@@ -156,7 +156,7 @@
                <div class="col-lg-2 col-md-2 form-group"> 
                   
                   <select class="form-control" name="inputAdDay">
-                  <option value="0" selected="selected" disabled="disabled">Day</option>
+                  <option value="0" selected="selected" >Day</option>
                    <?php for($i = 1; $i<=31; $i++){
                   			echo "<option value='$i'>$i</option>";
                   	

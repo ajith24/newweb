@@ -44,7 +44,7 @@ require 'lib.php';
       <div class="templatemo-sidebar">
         <header class="templatemo-site-header">
           <div class="square"></div>
-          <h1>Visual Admin</h1>
+          <h1>Ajith World</h1>
         </header>
         <div class="profile-photo-container">
           <img src="images/profilePic/<?php echo $_SESSION['imgloc'] ?>" alt="Profile Photo" class="img-responsive">  
@@ -84,7 +84,7 @@ require 'lib.php';
               
                 <div class="panel-heading templatemo-position-relative">
                 	<h2 class="text-uppercase" style="float: left;">User Table</h2>
-                	<h3 style="text-align: right; color: white;"><a href="adddata.php" >Add New Data </a></h3>
+                	<h3 style="text-align: right; color: red;"><a href="adddata.php" style="color: red;" >Add New Data </a></h3>
                 </div>
                 <div class="table-responsive">
                   <table class="table table-striped table-bordered">
@@ -94,9 +94,9 @@ require 'lib.php';
                         <td>Full Name</td>
                         <td>Pic</td>
                         <td>DOB</td>
-                        <td>DOA</td>
+                        <td>Wedding Anniversary</td>
                         <td>Created By</td>
-                        <td>Actions</td>
+                       <!-- <td>Actions</td> -->
                       </tr>
                     </thead>
                     <tbody>
@@ -120,20 +120,21 @@ require 'lib.php';
 				                        <td>".$val['bdate']."</td>
 				                       	<td>".$val['adate']."</td>
     									<td>".getUserName($val['created_by'])."</td>
-    									<td> 
-    										<a href='#' >
-    											<img width=30 height=30 src='images/icons/edit.png' alt='Edit data' />
-    										</a>
-    										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    										<a href='#' >
-    											<img width=30 height=30 src='images/icons/del.png' alt='Delete data' />
-    										</a>
-    									</td>
+    									
                       				</tr>
     	  							";
 						}
 						
                   ?>  
+                <!--  <td> 
+                        <a href='#' >
+                          <img width=30 height=30 src='images/icons/edit.png' alt='Edit data' />
+                        </a>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href='#' >
+                          <img width=30 height=30 src='images/icons/del.png' alt='Delete data' />
+                        </a>
+                      </td> -->
                    </tbody>
                   </table>    
                 </div>                          

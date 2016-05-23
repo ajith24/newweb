@@ -13,7 +13,9 @@ if(isset($_POST['submit'])) {
 	$res = $conn->query($sql);
 	if($res->num_rows == 1 ) {
 		$row = $res->fetch_assoc();
+		
 		$_SESSION["id"] = $row['slno'];
+		$_SESSION["type"] = $row['type'];
 		$_SESSION["login"] = 1;
 		$_SESSION["imgloc"] = $row['imgloc'];
 		header('Location: index.php');

@@ -1,5 +1,5 @@
 <?php
-
+require 'sessionCheck.php';
 //[inputEmail] => [inputBdyear] 
 
 
@@ -14,6 +14,9 @@ $doa = $_POST['inputAdYear']."-".$_POST['inputAdMonth']."-".$_POST['inputAdDay']
 /* $from = new DateTime($dob);
 $to   = new DateTime('today');
 $age = $from->diff($to)->y; */
+
+$imgpath = null;
+
 if(isset($_FILES['fileToUpload'])){
 	$errors= array();
 	$file_name = $_FILES['fileToUpload']['name'];
@@ -29,7 +32,7 @@ if(isset($_FILES['fileToUpload'])){
 	}
 
 	if($file_size > 6097152){
-		$errors[]='File size must be excately 2 MB';
+		$errors[]='File size must be excately 5 MB';
 	}
 	$file_name = rand(1000,10000).$file_name;
 	if(empty($errors) == true){
@@ -41,7 +44,7 @@ if(isset($_FILES['fileToUpload'])){
 }
 
 $sql = "INSERT INTO tbl_bd (name,email_id,bdate,adate,imgloc,created_by)
-VALUES ('".$fullName ."','". $_POST['inputEmail']."','". $dob."','".$doa."','". $imgpath."',1)";
+VALUES ('".$fullName ."','". $_POST['inputEmail']."','". $dob."','".$doa."','". $imgpath."','".$_SESSION['id']."')";
 
 if ($conn->query($sql) === TRUE) {
 	$msg = "New record created successfully";
@@ -49,5 +52,5 @@ if ($conn->query($sql) === TRUE) {
 } else {
 	$msg = "Error: ". $conn->error;
 }
-
+echo $msg;
 $conn->close();

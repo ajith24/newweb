@@ -23,7 +23,7 @@ if(isset($_FILES['fileToUpload'])){
 	}
 
 	if($file_size > 6097152){
-		$errors[]='File size must be excately 2 MB';
+		$errors[]='File size must be excately 6 MB';
 	}
 	$file_name = rand(1000,10000).$file_name;
 	if(empty($errors) == true){
@@ -34,9 +34,9 @@ if(isset($_FILES['fileToUpload'])){
 	}
 }
 
-$sql = "INSERT INTO tbl_login (name,username,email_id,password,imgloc,created_at)
+$sql = "INSERT INTO tbl_login (name,username,email_id,password,imgloc,type,created_at)
 VALUES ('".$fullName ."','". $_POST['inputUsername']."','". $_POST['inputEmail']."',
-	'". md5($_POST['inputPass'])."','". $imgpath."','". date('Y-m-d')."')";
+	'". md5($_POST['inputPass'])."','". $imgpath."','". 2."',''". date('Y-m-d')."',". date('Y-m-d')."')";
 
 if ($conn->query($sql) === TRUE) {
 	$msg = "New record created successfully";
